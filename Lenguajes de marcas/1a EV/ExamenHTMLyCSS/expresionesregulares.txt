@@ -1,0 +1,5 @@
+Páginas para aprender sobre expresiones regulares
+https://www.adictosaltrabajo.com/2015/01/29/regexsam/
+
+Además de aprender sobre expresiones regulares se puede comprobar si la expresión regular es correcta
+https://regex101.com/

@@ -1,0 +1,16 @@
+* {margin-left:20px;}
+
+p:nth-child(3)
+    {
+        color:purple;
+    }
+
+h2:nth-child(2)
+    {
+        color:pink;
+    }
+
+div p,h2,h5:nth-child(2)
+    {
+       color:brown; 
+    }

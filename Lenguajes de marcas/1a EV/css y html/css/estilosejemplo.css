@@ -1,0 +1,50 @@
+/*Primer CSS*/
+body
+    {
+        color:#45fc30;
+        font-size:15px;
+        background-image:url(img/llama.jpg);
+    }
+#p1                           /* Cuando pongo # me refiero al id en el html*/
+    {
+        color:#ffafac;
+        font-family: timesNewRoman;
+        text-decoration: overline;
+        text-align: center;
+    }
+
+#p2
+    {
+        color:#ff5f81;
+        font-size:30px;
+        text-decoration: line-through;
+        text-align: right;
+    }
+
+p
+    {
+        color:#10ff2d;
+        font-style:italic;
+        text-decoration: underline;
+    }
+
+span
+    {
+        color:#1260ff;
+        font-size:25px;
+    }
+
+label.etiqueta                       /*Cuando pongo un . delante de la etiqueta 
+                                    me refiero al atributo class en el html*/
+    {
+        color:#ff12ab;
+        font-size:30px;
+    }
+
+p.texto
+    {
+        text-indent:100px;
+        text-decoration:none;
+        text-transform:uppercase;
+
+    }

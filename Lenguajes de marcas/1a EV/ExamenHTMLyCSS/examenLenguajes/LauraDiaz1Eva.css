@@ -1,0 +1,18 @@
+table, th, td 
+    {
+       border: black 1px solid;
+    }
+fieldset 
+    {
+        width: 1090px;
+    }
+body
+    {
+        font-size:15px;
+        color:#0000ff;
+        background-color:#aaa;
+    }
+h1
+    {
+        color:rgb(0%,80%,20%);
+    }

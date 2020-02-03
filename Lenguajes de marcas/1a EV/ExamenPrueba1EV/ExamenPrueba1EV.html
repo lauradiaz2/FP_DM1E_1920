@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>La carta veloz S.L.</title>
+    </head>
+    <body>
+        <h1>LA CARTA VELOZ</h1>
+        <img src="img/sobres.jpg" alt="sobres" width="150">
+        <table border="1">
+            <tr>
+                <th>Producto</th>
+                <th>España</th>
+                <th>Resto Europa</th>
+                <th>América</th>
+                <th>Asia</th>
+                <th>Oceanía</th>
+                <th>África</th>
+            </tr>
+            <tr>
+                <td>Normal</td>
+                <td>1,20</td>
+                <td>1,50</td>
+                <td>2,00</td>
+                <td>2,15</td>
+                <td>2,30</td>
+                <td>2,15</td>
+            </tr>
+            <tr>
+                <td>Certificada</td>
+                <td>2,20</td>
+                <td>2,50</td>
+                <td>3,00</td>
+                <td>3,15</td>
+                <td>3,30</td>
+                <td>3,15</td>
+            </tr>
+            <tr>
+                <td>Urgente</td>
+                <td>3,00</td>
+                <td>3,50</td>
+                <td>4,00</td>
+                <td>5,00</td>
+                <td>6,00</td>
+                <td>5,00</td>    
+            </tr>
+        </table><br/><br/>
+        <p>Deberá especificar Producto, Destino, Dirección de Origen e Email. En caso de Destino distinto de los reflejados tendrá que teclear 10,00 en Tarifa Extra</p><br/><br/>
+        <form action="#" method="post">
+            <label for="Producto">Producto*</label>
+            <select name="Producto" required autofocus>
+                <option>----</option>
+                <option>Normal</option>
+                <option>Certificada</option>
+                <option>Urgente</option>
+            </select><br/><br/>
+            <label for="destino">Destino*</label>
+            <input type="text" id="destino" maxlength="40" list="dest" required>
+                <datalist id="dest">
+                    <option value="España"/>
+                    <option value="Resto Europa"/>
+                    <option value="América"/>
+                    <option value="Asia"/>
+                    <option value="Oceanía"/>
+                    <option value="África"/>
+                </datalist><br/><br/>
+            <label for="extra">Tarifa Extra</label>
+            <input type="number" id="extra" max="10.00" min="0" step="0.01" value="0"><br/><br/>
+            <label for="origen">Dirección Origen*</label>            
+            <input type="text" id="origen" maxlength="40" pattern="^[A-Z][a-z]*[\sa-z][\sA-Z|a-z]*" required><br/><br/>
+            <label for="email">E-Mail*</label>            
+            <input type="email" id="email" placeholder="Introduzca su email" required ><br/><br/>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Enviar">
+        </form>
+    </body>
+
+
+</html>
