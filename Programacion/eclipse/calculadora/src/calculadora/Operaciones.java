@@ -45,7 +45,7 @@ public class Operaciones
 		
 		if (opCode == '+')
 		{
-		Suma.sum(num1,num2);
+			Suma.sum(num1,num2);
 		}
 		else if (opCode == '-') 
 		{
@@ -66,9 +66,7 @@ public class Operaciones
 			{
 				setOperacion("No puedo realizar esa división");
 				v++;
-				
 			}
-			
 		}
 		else 
 		{

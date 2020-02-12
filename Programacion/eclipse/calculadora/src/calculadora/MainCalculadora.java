@@ -2,6 +2,8 @@ package calculadora;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class MainCalculadora 
 {
 
@@ -10,19 +12,16 @@ public class MainCalculadora
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		Operaciones oper = new Operaciones();
-		System.out.println("CALCULADORA: ");
-		System.out.print("Operación: ");
-		String operacion1,operacion2="";
+		String operacion1 = JOptionPane.showInputDialog("Introduce la operación");
+		String operacion2="";
 		String x="0";
-		operacion1=input.nextLine();
 		while(!operacion2.contentEquals("FIN"))
 		{
-			System.out.println(oper.opWhatEver(operacion1,x));
+			JOptionPane.showMessageDialog(null, "Solución: "+oper.opWhatEver(operacion1,x));
 			if(x.contentEquals("0"))
 			{
-				System.out.println(oper.opWhatEver(operacion1,x));
-				System.out.println("Si no quieres operar mas escribe: FIN");
-				operacion2=input.nextLine();
+				//System.out.println(oper.opWhatEver(operacion1,x));
+				operacion2=JOptionPane.showInputDialog("Siguiente operación");
 				operacion1=oper.opWhatEver(operacion1,x)+operacion2;
 			}
 			else
