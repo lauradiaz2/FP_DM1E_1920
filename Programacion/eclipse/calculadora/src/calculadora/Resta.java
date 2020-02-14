@@ -2,14 +2,12 @@ package calculadora;
 
 public class Resta extends Operaciones
 {
-	public static void resta(String num1,String num2)
+	public void resta()
 	{
 		double n1,n2,result=0;
-		String resultado;
-		n1=Double.parseDouble(num1);
-		n2=Double.parseDouble(num2);
+		n1=Double.parseDouble(getNumero1());
+		n2=Double.parseDouble(getNumero2());
 		result=n1-n2;
-		resultado= String.valueOf(result);
-		setOperacion(resultado);
+		setNumero1(String.valueOf(result));
 	}
 }

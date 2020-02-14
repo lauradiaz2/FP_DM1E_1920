@@ -2,14 +2,14 @@ package calculadora;
 
 public class Division extends Operaciones
 {
-	public static void div(String num1,String num2)
+	public void div()
 	{
 		double n1,n2,aux;
 		int y,s,l=0;
 		String lau;
 		String resultado="";
-		n1=Double.parseDouble(num1);
-		n2=Double.parseDouble(num2);
+		n1=Double.parseDouble(getNumero1());
+		n2=Double.parseDouble(getNumero2());
 		aux=n1;
 		
 			while (aux!=0)
@@ -48,6 +48,6 @@ public class Division extends Operaciones
 					s++;
 				}
 			}
-		setOperacion(resultado);
+			setNumero1(String.valueOf(resultado));
 	}
 }

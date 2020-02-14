@@ -1,79 +1,52 @@
 package calculadora;
 
+import javax.swing.JOptionPane;
+
 public class Operaciones 
 {
-	private static String operacion;
+	private static String numero1;
+	private static String numero2;
+	private static String codigo;
+	private static String result;
+	//cada operación tendrá dos operandos y un código de operación
 	
-	public static String getOperacion() 
+	public static String getNumero1() 
 	{
-		return operacion;
+		return numero1;
 	}
-	public static void setOperacion(String _operacion) 
+	public static void setNumero1(String _operacion) 
 	{
-		operacion = _operacion;
+		numero1 = _operacion;
+	}
+	public static String getNumero2() 
+	{
+		return numero2;
+	}
+	public static void setNumero2(String _numero2) 
+	{
+		numero2 = _numero2;
+	}
+	public static String getCodigo() 
+	{
+		return codigo;
+	}
+	public static void setCodigo(String _codigo) 
+	{
+		codigo = _codigo;
+	}
+	public static String getResult() 
+	{
+		return result;
+	}
+	public static void setResult(String _result) 
+	{
+		result = _result;
 	}
 	
-	public boolean isValidOp(char op)
+	void mostrarInfo()
 	{
-		return (op=='+'||op=='-'||op=='*'||op=='/')? true : false;
-	}
-	public String opWhatEver(String operacion1,String c)
-	{
-		String num1="", num2="";
-		int x=0,v=Integer.parseInt(c);
-		char opCode = '_';
-		for(int i =0; i<operacion1.length();i++)
-		{
-			char operacion =operacion1.charAt(i);
-			if(isValidOp(operacion))
-			{
-				opCode = operacion;
-				x++;
-			}
-			else
-			{
-				if(x==1)
-				{
-					num2+= String.valueOf(operacion);
-				}
-				else
-				{
-					num1+=String.valueOf(operacion);
-				}
-			}
-		}
+		JOptionPane.showMessageDialog(null, Operaciones.getNumero1()+Operaciones.getCodigo()
+		+Operaciones.getNumero2()+" = "+Operaciones.getResult());
 		
-		if (opCode == '+')
-		{
-			Suma.sum(num1,num2);
-		}
-		else if (opCode == '-') 
-		{
-			Resta.resta(num1,num2);
-		}
-		else if (opCode == '*') 
-		{
-			Multiplicacion.mult(num1, num2);
-		}
-		else if (opCode == '/') 
-		{
-			//ojO Esto puede petar 0/0 N/0
-			if(!num2.contentEquals("0"))
-			{
-				Division.div(num1, num2);
-			}
-			else
-			{
-				setOperacion("No puedo realizar esa división");
-				v++;
-			}
-		}
-		else 
-		{
-			//Controlar operación inválida
-			setOperacion("No puedo realizar esa operacion");
-		}
-		c=String.valueOf(v);
-		return getOperacion();
 	}
 }
