@@ -1,4 +1,4 @@
-package calculadora;
+package Operaciones;
 
 public class Multiplicacion extends Operaciones
 {
@@ -12,6 +12,6 @@ public class Multiplicacion extends Operaciones
 			result+=n1;
 			n2--;
 		}
-		setNumero1(String.valueOf(result));
+		setResult(String.valueOf(result));
 	}
 }

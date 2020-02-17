@@ -1,4 +1,4 @@
-package calculadora;
+package Operaciones;
 
 public class Division extends Operaciones
 {
@@ -48,6 +48,6 @@ public class Division extends Operaciones
 					s++;
 				}
 			}
-			setNumero1(String.valueOf(resultado));
+			setResult(String.valueOf(resultado));
 	}
 }

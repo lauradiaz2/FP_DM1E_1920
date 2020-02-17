@@ -1,4 +1,4 @@
-package calculadora;
+package Operaciones;
 
 public class Resta extends Operaciones
 {
@@ -8,6 +8,6 @@ public class Resta extends Operaciones
 		n1=Double.parseDouble(getNumero1());
 		n2=Double.parseDouble(getNumero2());
 		result=n1-n2;
-		setNumero1(String.valueOf(result));
+		setResult(String.valueOf(result));
 	}
 }
