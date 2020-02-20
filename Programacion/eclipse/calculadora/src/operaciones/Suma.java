@@ -1,4 +1,4 @@
-package Operaciones;
+package operaciones;
 
 public class Suma extends Operaciones
 {

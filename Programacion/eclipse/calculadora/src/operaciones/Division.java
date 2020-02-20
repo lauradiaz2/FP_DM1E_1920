@@ -1,4 +1,4 @@
-package Operaciones;
+package operaciones;
 
 public class Division extends Operaciones
 {
@@ -8,8 +8,8 @@ public class Division extends Operaciones
 		int y,s,l=0;
 		String lau;
 		String resultado="";
-		n1=Double.parseDouble(getNumero1());
-		n2=Double.parseDouble(getNumero2());
+		n1=Double.parseDouble(calc.getOp1());
+		n2=Double.parseDouble(calc.getOp2());
 		aux=n1;
 		
 			while (aux!=0)

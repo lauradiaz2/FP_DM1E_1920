@@ -4,58 +4,45 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import Operaciones.Division;
-import Operaciones.Multiplicacion;
-import Operaciones.Operaciones;
-import Operaciones.Resta;
-import Operaciones.Suma;
-
 public class MainCalculadora 
 {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
+		operaciones.Operaciones oper = new operaciones.Operaciones();
 		//Objetos de cada tipo de operacion.
-		Suma s = new Suma();
-		Resta r = new Resta();
-		Division d = new Division();
-		Multiplicacion m = new Multiplicacion();
+		operaciones.Suma s = new operaciones.Suma();
+		operaciones.Resta r = new operaciones.Resta();
+		operaciones.Division d = new operaciones.Division();
+		operaciones.Multiplicacion m = new operaciones.Multiplicacion();
+		Inputs introval = new Inputs();
 		String finCalc="";
+		int contador=0;
+		String cont = String.valueOf(contador);
 		//Pido datos: los 2 numeros y el tipo de operacion que quiero.
-		Operaciones.setNumero1(JOptionPane.showInputDialog("Numero 1:"));
+		introval.setOp1(cont);
+		contador=1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 		while(!finCalc.contentEquals("FIN"))
 		{
-			int opcion = JOptionPane.showOptionDialog(null,
-					"Qué operación quieres realizar", 
-					"Operación a realizar", 
-					JOptionPane.YES_NO_CANCEL_OPTION, 
-					JOptionPane.INFORMATION_MESSAGE,
-					null,
-					new Object [] {"Suma","Resta","Multiplicacion","Division","Reiniciar","Cancelar"},
-					"seleccion 1");
-			if(opcion!=4 && opcion!=5)
+			introval.setCod();
+			if(introval.getCod()!="c" && introval.getCod()!="r")
 			{
-				Operaciones.setNumero2(JOptionPane.showInputDialog("Numero 2:"));
+				introval.setOp2();
 			}
-			switch (opcion)
+			switch (introval.getCod())
 			{
-			case 0:
-				Operaciones.setCodigo("+");
+			case "+":
 				s.sum();
-				
 			break;
-			case 1:
-				Operaciones.setCodigo("-");
+			case "-":
 				r.resta();
 			break;
-			case 2:
-				Operaciones.setCodigo("*");
+			case "*":
 				m.mult();
 			break;
-			case 3:
-				Operaciones.setCodigo("/");
-				if(Operaciones.getNumero2()!="0")
+			case "/":
+				if(introval.getOp1()!="0")
 				{
 					d.div();
 				}
@@ -64,27 +51,26 @@ public class MainCalculadora
 					JOptionPane.showMessageDialog(null,"No puedo operar.");
 				}
 			break;
-			case 4:
-				Operaciones.setCodigo("");
-				Operaciones.setNumero1("");
-				Operaciones.setNumero2("");
-				Operaciones.setResult("");
+			case "r":
 				JOptionPane.showMessageDialog(null,"Reiniciando valores.");
-				Operaciones.setNumero1(JOptionPane.showInputDialog("Numero 1:"));
+				contador=0;
+				cont = String.valueOf(contador);
+				introval.setOp1(cont);
+				contador=1;
 			break;
-			case 5:
+			case "c":
 				finCalc="FIN";
 			break;
 			}
-			if(opcion==5)
+			if(introval.getCod()=="c")
 			{
 				JOptionPane.showMessageDialog(null, "FIN");
 			}
-			else
+			else if (introval.getCod()=="r")
 			{
-				JOptionPane.showMessageDialog(null, Operaciones.getNumero1()+" "+Operaciones.getCodigo()+" "+
-						Operaciones.getNumero2()+" = "+Operaciones.getResult());
-						Operaciones.setNumero1(Operaciones.getResult());
+				JOptionPane.showMessageDialog(null, introval.getOp1()+" "+introval.getCod()+" "+
+						introval.getOp2()+" = "+oper.getResult());
+						introval.setOp1(oper.getResult());
 			}
 		}
 		input.close();
