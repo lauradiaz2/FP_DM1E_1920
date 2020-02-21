@@ -2,14 +2,14 @@ package operaciones;
 
 public class Division extends Operaciones
 {
-	public void div()
+	public void div(String a, String b)
 	{
 		double n1,n2,aux;
 		int y,s,l=0;
 		String lau;
 		String resultado="";
-		n1=Double.parseDouble(calc.getOp1());
-		n2=Double.parseDouble(calc.getOp2());
+		n1=Double.parseDouble(a);
+		n2=Double.parseDouble(b);
 		aux=n1;
 		
 			while (aux!=0)

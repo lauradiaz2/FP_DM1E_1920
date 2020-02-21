@@ -10,19 +10,20 @@ public class MainCalculadora
 	{
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
-		operaciones.Operaciones oper = new operaciones.Operaciones();
 		//Objetos de cada tipo de operacion.
-		operaciones.Suma s = new operaciones.Suma();
+		operaciones.Suma sumaa = new operaciones.Suma();
 		operaciones.Resta r = new operaciones.Resta();
 		operaciones.Division d = new operaciones.Division();
 		operaciones.Multiplicacion m = new operaciones.Multiplicacion();
 		Inputs introval = new Inputs();
+		operaciones.Operaciones oper = new operaciones.Operaciones();
 		String finCalc="";
-		int contador=0;
-		String cont = String.valueOf(contador);
 		//Pido datos: los 2 numeros y el tipo de operacion que quiero.
+		String cont;
+		int contador=0;
+		cont=String.valueOf(contador);
 		introval.setOp1(cont);
-		contador=1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+		contador++;
 		while(!finCalc.contentEquals("FIN"))
 		{
 			introval.setCod();
@@ -33,18 +34,18 @@ public class MainCalculadora
 			switch (introval.getCod())
 			{
 			case "+":
-				s.sum();
+				sumaa.sum(introval.getOp1(),introval.getOp2());
 			break;
 			case "-":
-				r.resta();
+				r.resta(introval.getOp1(),introval.getOp2());
 			break;
 			case "*":
-				m.mult();
+				m.mult(introval.getOp1(),introval.getOp2());
 			break;
 			case "/":
 				if(introval.getOp1()!="0")
 				{
-					d.div();
+					d.div(introval.getOp1(),introval.getOp2());
 				}
 				else
 				{
@@ -54,9 +55,9 @@ public class MainCalculadora
 			case "r":
 				JOptionPane.showMessageDialog(null,"Reiniciando valores.");
 				contador=0;
-				cont = String.valueOf(contador);
+				cont=String.valueOf(contador);
 				introval.setOp1(cont);
-				contador=1;
+				contador++;
 			break;
 			case "c":
 				finCalc="FIN";
@@ -66,11 +67,12 @@ public class MainCalculadora
 			{
 				JOptionPane.showMessageDialog(null, "FIN");
 			}
-			else if (introval.getCod()=="r")
+			else if (introval.getCod()!="r")
 			{
 				JOptionPane.showMessageDialog(null, introval.getOp1()+" "+introval.getCod()+" "+
 						introval.getOp2()+" = "+oper.getResult());
-						introval.setOp1(oper.getResult());
+				cont=String.valueOf(contador);
+				introval.setOp1(cont);
 			}
 		}
 		input.close();
