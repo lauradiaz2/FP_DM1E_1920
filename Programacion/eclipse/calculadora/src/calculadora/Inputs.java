@@ -8,25 +8,20 @@ public class Inputs
 	private double op1;
 	private double op2;
 	private int cod;
-//	operaciones.Operaciones oper = new operaciones.Operaciones();
-	Inputs()
+
+	Inputs()//Constructor por defecto
 	{
 		this.op1=0;
 		this.op2=0;
 		this.cod=0;
 		opciones= new String[5];
-			opciones[0]="";
-			opciones[1]="";
-			opciones[2]="";
-			opciones[3]="";
-			opciones[4]="";
-
-		
+			opciones[0]="SUMA";
+			opciones[1]="RESTA";
+			opciones[2]="MULTIPLICACION";
+			opciones[3]="DIVISION";
+			opciones[4]="CANCELAR";		
 	}
-	public String getOp1() 
-	{
-		return op1;
-	}
+	//Metodos
 	public void pedirOp1()
 	{
 		op1=Double.parseDouble(JOptionPane.showInputDialog("Numero 1:"));
@@ -37,8 +32,7 @@ public class Inputs
 	}
 	public void pedirCod()
 	{
-		String cod;
-		int opcion = JOptionPane.showOptionDialog(null,
+		int cod = JOptionPane.showOptionDialog(null,
 				"Qué operación quieres realizar", 
 				"Operación a realizar", 
 				JOptionPane.YES_NO_CANCEL_OPTION, 
@@ -46,56 +40,26 @@ public class Inputs
 				null,
 				opciones,
 				null);
-		if(opcion==0)
-		{
-			cod="+";
-		} else if (opcion==1) {
-			cod="-";
-		} else if (opcion==2) {
-			cod="*";
-		} else if (opcion==3) {
-			cod="/";
-		} else if (opcion==4) {
-			cod="r";
-		} else {
-			cod="c";
-		} 
+		
 	}
 //	SETTERS Y GETTERS
 	
-	
-	
-	
-//	public String getCod() 
-//	{
-//		return cod;
-//	}
-//	public void setCod() 
-//	{
-//		String cod;
-//		int opcion = JOptionPane.showOptionDialog(null,
-//				"Qué operación quieres realizar", 
-//				"Operación a realizar", 
-//				JOptionPane.YES_NO_CANCEL_OPTION, 
-//				JOptionPane.INFORMATION_MESSAGE,
-//				null,
-//				new Object [] {"Suma","Resta","Multiplicacion","Division","Reiniciar","Cancelar"},
-//				null);
-//		if(opcion==0)
-//		{
-//			cod="+";
-//		} else if (opcion==1) {
-//			cod="-";
-//		} else if (opcion==2) {
-//			cod="*";
-//		} else if (opcion==3) {
-//			cod="/";
-//		} else if (opcion==4) {
-//			cod="r";
-//		} else {
-//			cod="c";
-//		} 
-//		this.cod = cod;
-//	}
-	
+	public double getOp1() {
+		return op1;
+	}
+	public void setOp1(double op1) {
+		this.op1 = op1;
+	}
+	public double getOp2() {
+		return op2;
+	}
+	public void setOp2(double op2) {
+		this.op2 = op2;
+	}
+	public int getCod() {
+		return cod;
+	}
+	public void setCod(int cod) {
+		this.cod = cod;
+	}	
 }
