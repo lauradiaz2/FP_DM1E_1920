@@ -2,12 +2,13 @@ package operaciones;
 
 public class Resta extends Operaciones
 {
+	public Resta(int cod, double numero1, double numero2, double resultado) 
+	{
+		super(cod, numero1, numero2, resultado);
+	}
+
 	public void resta(String a, String b)
 	{
-		double n1,n2,result=0;
-		n1=Double.parseDouble(a);
-		n2=Double.parseDouble(b);
-		result=n1-n2;
-		setResult(String.valueOf(result));
+		setResult(getOp1()-getOp2());
 	}
 }

@@ -2,16 +2,19 @@ package operaciones;
 
 public class Division extends Operaciones
 {
-	public void div(String a, String b)
+	public Division(int cod, double numero1, double numero2, double resultado) 
 	{
-		double n1,n2,aux;
+		super(cod, numero1, numero2, resultado);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void div()
+	{
+		double n1=getOp1(),n2=getOp2(),aux;
 		int y,s,l=0;
 		String lau;
 		String resultado="";
-		n1=Double.parseDouble(a);
-		n2=Double.parseDouble(b);
-		aux=n1;
-		
+		aux=getOp1();
 			while (aux!=0)
 			{
 				y=0;
@@ -48,6 +51,6 @@ public class Division extends Operaciones
 					s++;
 				}
 			}
-			setResult(String.valueOf(resultado));
+			setResult(Double.parseDouble(resultado));
 	}
 }

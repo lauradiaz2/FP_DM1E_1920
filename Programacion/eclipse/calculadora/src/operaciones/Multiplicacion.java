@@ -2,16 +2,19 @@ package operaciones;
 
 public class Multiplicacion extends Operaciones
 {
-	public void mult(String a, String b)
+	public Multiplicacion(int cod, double numero1, double numero2, double resultado) 
 	{
-		double result=0,n1,n2;
-		n1=Double.parseDouble(a);
-		n2=Double.parseDouble(b);
-		while (n2>0)
+		super(cod, numero1, numero2, resultado);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void mult()
+	{
+		double resultado=0,n1=getOp1();
+		while (getOp2()>0)
 		{
-			result+=n1;
-			n2--;
+			resultado+=n1;
 		}
-		setResult(String.valueOf(result));
+		setResult(resultado);
 	}
 }

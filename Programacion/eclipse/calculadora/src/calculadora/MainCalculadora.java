@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import operaciones.Division;
+import operaciones.Multiplicacion;
+import operaciones.Operaciones;
+import operaciones.Resta;
+import operaciones.Suma;
+
 public class MainCalculadora 
 {
 	public static void main(String[] args) 
@@ -11,63 +17,66 @@ public class MainCalculadora
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		//Objetos de cada tipo de operacion.
-		operaciones.Suma sumaa = new operaciones.Suma();
-		operaciones.Resta r = new operaciones.Resta();
-		operaciones.Division d = new operaciones.Division();
-		operaciones.Multiplicacion m = new operaciones.Multiplicacion();
+		double op1,op2,result;
+		int cod;
+		Suma s = new Suma(cod,op1,op2,result);
+		Resta r = new Resta(cod,op1,op2,result);
+		Division d = new Division(cod,op1,op2,result);
+		Multiplicacion m = new Multiplicacion(cod,op1,op2,result);
 		Inputs introval = new Inputs();
-		operaciones.Operaciones oper = new operaciones.Operaciones();
 		String finCalc="";
 		//Pido datos: los 2 numeros y el tipo de operacion que quiero.
-		String cont;
-		int contador=0;
-		cont=String.valueOf(contador);
-		introval.setOp1(cont);
-		contador++;
+		introval.pedirOp1();
 		while(!finCalc.contentEquals("FIN"))
 		{
-			introval.setCod();
-			if(introval.getCod()!="c" && introval.getCod()!="r")
+			introval.pedirCod();
+			if(introval.getCod()!=4)
 			{
-				introval.setOp2();
+				introval.pedirOp2();
 			}
 			switch (introval.getCod())
 			{
-			case "+":
-				sumaa.sum(introval.getOp1(),introval.getOp2());
+			case 0:
+				s.setOp1(introval.getOp1());
+				s.setCod(introval.getCod());
+				s.setOp2(introval.getOp2());
 			break;
-			case "-":
-				r.resta(introval.getOp1(),introval.getOp2());
+			case 1:
+				r.setOp1(introval.getOp1());
+				r.setCod(introval.getCod());
+				r.setOp2(introval.getOp2());
 			break;
-			case "*":
-				m.mult(introval.getOp1(),introval.getOp2());
+			case 2:
+				m.setOp1(introval.getOp1());
+				m.setCod(introval.getCod());
+				m.setOp2(introval.getOp2());
 			break;
-			case "/":
-				if(introval.getOp1()!="0")
+			case 3:
+				if()
 				{
-					d.div(introval.getOp1(),introval.getOp2());
+					d.setOp1(introval.getOp1());
+					d.setCod(introval.getCod());
+					d.setOp2(introval.getOp2());
 				}
 				else
 				{
 					JOptionPane.showMessageDialog(null,"No puedo operar.");
 				}
 			break;
-			case "r":
+			case 4:
 				JOptionPane.showMessageDialog(null,"Reiniciando valores.");
-				contador=0;
-				cont=String.valueOf(contador);
-				introval.setOp1(cont);
-				contador++;
+				introval.pedirOp1();
+				
 			break;
-			case "c":
+			case 5:
 				finCalc="FIN";
 			break;
 			}
-			if(introval.getCod()=="c")
+			if(introval.getCod()==5)
 			{
 				JOptionPane.showMessageDialog(null, "FIN");
 			}
-			else if (introval.getCod()!="r")
+			else if (introval.getCod()!=4)
 			{
 				JOptionPane.showMessageDialog(null, introval.getOp1()+" "+introval.getCod()+" "+
 						introval.getOp2()+" = "+oper.getResult());

@@ -19,7 +19,8 @@ public class Inputs
 			opciones[1]="RESTA";
 			opciones[2]="MULTIPLICACION";
 			opciones[3]="DIVISION";
-			opciones[4]="CANCELAR";		
+			opciones[4]="REINICIAR";
+			opciones[5]="CANCELAR";		
 	}
 	//Metodos
 	public void pedirOp1()
@@ -32,7 +33,7 @@ public class Inputs
 	}
 	public void pedirCod()
 	{
-		int cod = JOptionPane.showOptionDialog(null,
+		cod = JOptionPane.showOptionDialog(null,
 				"Qué operación quieres realizar", 
 				"Operación a realizar", 
 				JOptionPane.YES_NO_CANCEL_OPTION, 
