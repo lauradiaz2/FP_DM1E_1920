@@ -7,7 +7,7 @@ public class Resta extends Operaciones
 		super(cod, numero1, numero2, resultado);
 	}
 
-	public void resta(String a, String b)
+	public void rest()
 	{
 		setResult(getOp1()-getOp2());
 	}

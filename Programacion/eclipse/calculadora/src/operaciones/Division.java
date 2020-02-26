@@ -5,7 +5,6 @@ public class Division extends Operaciones
 	public Division(int cod, double numero1, double numero2, double resultado) 
 	{
 		super(cod, numero1, numero2, resultado);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void div()

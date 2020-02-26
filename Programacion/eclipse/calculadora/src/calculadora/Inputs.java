@@ -14,7 +14,7 @@ public class Inputs
 		this.op1=0;
 		this.op2=0;
 		this.cod=0;
-		opciones= new String[5];
+		opciones= new String[6];
 			opciones[0]="SUMA";
 			opciones[1]="RESTA";
 			opciones[2]="MULTIPLICACION";
