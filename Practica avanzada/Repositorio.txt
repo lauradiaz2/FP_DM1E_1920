@@ -1,0 +1,2 @@
+Repositorio parte grupal y '2.1.2.- Repositorio remoto'
+https://github.com/A-Zelada/practica2git.git 
